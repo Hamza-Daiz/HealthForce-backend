@@ -13,10 +13,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>backend-healthforce</name>
     <description>backend-healthforce</description>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
