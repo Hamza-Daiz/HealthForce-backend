@@ -9,13 +9,16 @@ import javax.persistence.Id;
 public class Patient {
     @Id
     @Column(name = "id", nullable = false)
-    private Long id;
+    private String id;
 
     public Patient() {
     }
 
     @Column(name = "phone")
     private String phone;
+
+    @Column(name = "adress")
+    private String adress;
     @Column(name = "birth_date")
     private String birth_date;
     @Column(name = "first_name", nullable = false)
@@ -52,7 +55,7 @@ public class Patient {
     private String glecimie;
 
 
-    public Patient(Long id, String phone, String birth_date, String first_name, String last_name, String email) {
+    public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email) {
         this.id = id;
         this.phone = phone;
         this.birth_date = birth_date;
@@ -61,7 +64,7 @@ public class Patient {
         this.email = email;
     }
 
-    public Patient(Long id, String first_name, String last_name, String email,String password) {
+    public Patient(String id, String first_name, String last_name, String email,String password) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -75,7 +78,7 @@ public class Patient {
         this.email = email;
     }
 
-    public Patient(Long id, String phone, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String home_phone, String description, String poid, String taille, String temperature, String tension, String glecimie) {
+    public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String home_phone, String description, String poid, String taille, String temperature, String tension, String glecimie) {
         this.id = id;
         this.phone = phone;
         this.birth_date = birth_date;
@@ -96,7 +99,7 @@ public class Patient {
         this.glecimie = glecimie;
     }
 
-    public Patient(Long id, String phone, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender) {
+    public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender) {
         this.id = id;
         this.phone = phone;
         this.birth_date = birth_date;
@@ -106,6 +109,14 @@ public class Patient {
         this.password = password;
         this.cin = cin;
         this.gender = gender;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     public String getCin() {
@@ -244,11 +255,11 @@ public class Patient {
         this.email = email;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

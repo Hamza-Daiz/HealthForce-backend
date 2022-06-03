@@ -11,7 +11,7 @@ import java.util.Objects;
 public class PatientDetailsIml implements UserDetails {
 
     private static final long serialVersionUID = 1L;
-    private Long id;
+    private String id;
     private  String email;
 
     private String last_name;
@@ -30,11 +30,11 @@ public class PatientDetailsIml implements UserDetails {
     @JsonIgnore
     private String password;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,7 +66,7 @@ public class PatientDetailsIml implements UserDetails {
         this.password = password;
     }
 
-    public PatientDetailsIml(Long id, String email,String last_name, String phone, String birth_date, String password) {
+    public PatientDetailsIml(String id, String email,String last_name, String phone, String birth_date, String password) {
         this.id = id;
         this.email = email;
         this.last_name=last_name;
