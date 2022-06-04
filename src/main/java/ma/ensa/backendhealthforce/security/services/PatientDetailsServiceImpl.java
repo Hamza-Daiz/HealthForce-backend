@@ -1,6 +1,5 @@
 package ma.ensa.backendhealthforce.security.services;
 
-
 import ma.ensa.backendhealthforce.models.Patient;
 import ma.ensa.backendhealthforce.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-
 public class PatientDetailsServiceImpl implements UserDetailsService {
 
     @Autowired

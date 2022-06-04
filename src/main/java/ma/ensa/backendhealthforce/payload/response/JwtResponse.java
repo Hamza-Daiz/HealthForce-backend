@@ -3,11 +3,11 @@ package ma.ensa.backendhealthforce.payload.response;
 public class JwtResponse {
   private String token;
   private String type = "Bearer";
-  private String id;
+  private Long id;
   private String username;
   private String email;
 
-  public JwtResponse(String accessToken, String id, String username, String email) {
+  public JwtResponse(String accessToken, Long id, String username, String email) {
     this.token = accessToken;
     this.id = id;
     this.username = username;
@@ -30,11 +30,11 @@ public class JwtResponse {
     this.type = tokenType;
   }
 
-  public String getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
