@@ -4,14 +4,102 @@ public class JwtResponse {
   private String token;
   private String type = "Bearer";
   private String id;
-  private String username;
+  private String first_name;
+  private String last_name;
   private String email;
+  private String cin;
+  private String phone;
+  private String adress;
+  private String assurance_medical;
+  private String num_assurance;
+  private String birth_date;
 
-  public JwtResponse(String accessToken, String id, String username, String email) {
+
+  public JwtResponse(String accessToken, String id, String first_name, String email,String last_name, String cin, String phone, String adress, String assurance_medical, String num_assurance, String birth_date) {
     this.token = accessToken;
     this.id = id;
-    this.username = username;
+    this.first_name = first_name;
     this.email = email;
+    this.last_name = last_name;
+    this.cin = cin;
+    this.phone = phone;
+    this.adress = adress;
+    this.assurance_medical = assurance_medical;
+    this.num_assurance = num_assurance;
+    this.birth_date = birth_date;
+  }
+
+
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getLast_name() {
+    return last_name;
+  }
+
+  public void setLast_name(String last_name) {
+    this.last_name = last_name;
+  }
+
+  public String getCin() {
+    return cin;
+  }
+
+  public void setCin(String cin) {
+    this.cin = cin;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public String getAdress() {
+    return adress;
+  }
+
+  public void setAdress(String adress) {
+    this.adress = adress;
+  }
+
+  public String getAssurance_medical() {
+    return assurance_medical;
+  }
+
+  public void setAssurance_medical(String assurance_medical) {
+    this.assurance_medical = assurance_medical;
+  }
+
+  public String getNum_assurance() {
+    return num_assurance;
+  }
+
+  public void setNum_assurance(String num_assurance) {
+    this.num_assurance = num_assurance;
+  }
+
+  public String getBirth_date() {
+    return birth_date;
+  }
+
+  public void setBirth_date(String birth_date) {
+    this.birth_date = birth_date;
   }
 
   public String getAccessToken() {
@@ -46,12 +134,12 @@ public class JwtResponse {
     this.email = email;
   }
 
-  public String getUsername() {
-    return username;
+  public String getFirst_name() {
+    return first_name;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setFirst_name(String first_name) {
+    this.first_name = first_name;
   }
 
 }

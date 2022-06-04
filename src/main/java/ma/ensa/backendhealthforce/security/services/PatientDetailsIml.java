@@ -15,7 +15,55 @@ public class PatientDetailsIml implements UserDetails {
     private  String email;
 
     private String last_name;
-     public String getLast_name() {
+    private String first_name;
+    private String cin;
+    private String phone;
+    private String adress;
+    private String assurance_medical;
+    private String num_assurance;
+    private String birth_date;
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getCin() {
+        return cin;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public String getAssurance_medical() {
+        return assurance_medical;
+    }
+
+    public void setAssurance_medical(String assurance_medical) {
+        this.assurance_medical = assurance_medical;
+    }
+
+    public String getNum_assurance() {
+        return num_assurance;
+    }
+
+    public void setNum_assurance(String num_assurance) {
+        this.num_assurance = num_assurance;
+    }
+
+    public String getLast_name() {
         return last_name;
     }
 
@@ -23,8 +71,7 @@ public class PatientDetailsIml implements UserDetails {
         this.last_name = last_name;
     }
 
-    private  String phone;
-    private String birth_date;
+
 
     @JsonIgnore
     private String password;
@@ -65,13 +112,17 @@ public class PatientDetailsIml implements UserDetails {
         this.password = password;
     }
 
-    public PatientDetailsIml(String id,  String email,String last_name, String phone, String birth_date, String password) {
+    public PatientDetailsIml(String id,  String email,String last_name, String phone, String birth_date,String first_name,String cin,String assurance_medical,String num_assurance,String adress) {
         this.id = id;
+        this.first_name = first_name;
         this.email = email;
-        this.last_name=last_name;
+        this.last_name = last_name;
+        this.cin = cin;
         this.phone = phone;
+        this.adress = adress;
+        this.assurance_medical = assurance_medical;
+        this.num_assurance = num_assurance;
         this.birth_date = birth_date;
-        this.password = password;
 
 
 
@@ -86,7 +137,11 @@ public class PatientDetailsIml implements UserDetails {
                 patient.getLast_name(),
                 patient.getPhone(),
                 patient.getBirth_date(),
-                patient.getPassword());
+                patient.getFirst_name(),
+                patient.getCin(),
+                patient.getAssurance_medical(),
+                patient.getNum_assurance(),
+                patient.getAdress());
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

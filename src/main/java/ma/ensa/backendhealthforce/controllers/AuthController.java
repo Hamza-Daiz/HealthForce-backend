@@ -54,8 +54,16 @@ public class AuthController {
     System.out.println("4");
     return ResponseEntity.ok(new JwtResponse(jwt,
             patientDetails.getId(),
+            patientDetails.getFirst_name(),
             patientDetails.getEmail(),
-            patientDetails.getEmail()));
+            patientDetails.getLast_name(),
+            patientDetails.getCin(),
+            patientDetails.getPhone(),
+            patientDetails.getAdress(),
+            patientDetails.getAssurance_medical(),
+            patientDetails.getNum_assurance(),
+            patientDetails.getBirth_date()
+    ));
   }
 
   @PostMapping("/signup")
