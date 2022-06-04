@@ -14,8 +14,6 @@ public class Patient {
 
     @Column(name = "phone")
     private String phone;
-    @Column(name = "id_patient")
-    private String id_patient;
     @Column(name = "adress")
     private String adress;
     @Column(name = "birth_date")
@@ -77,10 +75,9 @@ public class Patient {
         this.email = email;
     }
 
-    public Patient(String id, String phone, String id_patient, String adress, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String home_phone, String description, String poid, String taille, String temperature, String tension, String glecimie) {
+    public Patient(String id, String phone,  String adress, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String home_phone, String description, String poid, String taille, String temperature, String tension, String glecimie) {
         this.id = id;
         this.phone = phone;
-        this.id_patient = id_patient;
         this.adress = adress;
         this.birth_date = birth_date;
         this.first_name = first_name;
@@ -112,13 +109,6 @@ public class Patient {
         this.gender = gender;
     }
 
-    public String getId_patient() {
-        return id_patient;
-    }
-
-    public void setId_patient(String id_patient) {
-        this.id_patient = id_patient;
-    }
 
     public String getAdress() {
         return adress;

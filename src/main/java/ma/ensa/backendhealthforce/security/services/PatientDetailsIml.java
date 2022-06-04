@@ -12,20 +12,10 @@ public class PatientDetailsIml implements UserDetails {
 
     private static final long serialVersionUID = 1L;
     private String id;
-    private String id_patient;
     private  String email;
 
     private String last_name;
-
-    public String getId_patient() {
-        return id_patient;
-    }
-
-    public void setId_patient(String id_patient) {
-        this.id_patient = id_patient;
-    }
-
-    public String getLast_name() {
+     public String getLast_name() {
         return last_name;
     }
 
@@ -75,9 +65,8 @@ public class PatientDetailsIml implements UserDetails {
         this.password = password;
     }
 
-    public PatientDetailsIml(String id, String id_patient, String email,String last_name, String phone, String birth_date, String password) {
+    public PatientDetailsIml(String id,  String email,String last_name, String phone, String birth_date, String password) {
         this.id = id;
-        this.id_patient=id_patient;
         this.email = email;
         this.last_name=last_name;
         this.phone = phone;
@@ -93,7 +82,6 @@ public class PatientDetailsIml implements UserDetails {
 
         return new PatientDetailsIml(
                 patient.getId(),
-                patient.getId_patient(),
                 patient.getEmail(),
                 patient.getLast_name(),
                 patient.getPhone(),
