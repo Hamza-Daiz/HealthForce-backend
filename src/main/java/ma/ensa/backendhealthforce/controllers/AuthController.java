@@ -42,7 +42,7 @@ public class AuthController {
   }
 
   @PostMapping("/signin")
-  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+  public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
     System.out.println("1");
     Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -52,10 +52,21 @@ public class AuthController {
     System.out.println("3");
     PatientDetailsIml patientDetails = (PatientDetailsIml) authentication.getPrincipal();
     System.out.println("4");
+    System.out.println("patientPhone " + patientDetails.getPhone());
+    System.out.println("patientAdress " + patientDetails.getAdress());
     return ResponseEntity.ok(new JwtResponse(jwt,
             patientDetails.getId(),
             patientDetails.getEmail(),
-            patientDetails.getEmail()));
+            patientDetails.getEmail(),
+            patientDetails.getFirst_name(),
+            patientDetails.getLast_name(),
+            patientDetails.getBirth_date(),
+            patientDetails.getAssurance_medical(),
+            patientDetails.getNum_assurance(),
+            patientDetails.getPhone(),
+            patientDetails.getCin(),
+            patientDetails.getAdress()
+            ));
   }
 
   @PostMapping("/signup")

@@ -110,6 +110,7 @@ public class Patient {
     }
 
 
+
     public String getAdress() {
         return adress;
     }
