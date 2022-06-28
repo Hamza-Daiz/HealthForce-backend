@@ -26,6 +26,7 @@ public class PatientDetailsIml implements UserDetails {
     @JsonIgnore
     private String password;
 
+
     public String getFirst_name() {
         return first_name;
     }
@@ -50,6 +51,7 @@ public class PatientDetailsIml implements UserDetails {
         this.num_assurance = num_assurance;
     }
 
+
     public String getCin() {
         return cin;
     }
@@ -65,6 +67,7 @@ public class PatientDetailsIml implements UserDetails {
     public void setAdress(String adress) {
         this.adress = adress;
     }
+
 
     public String getLast_name() {
         return last_name;
@@ -110,13 +113,17 @@ public class PatientDetailsIml implements UserDetails {
         this.password = password;
     }
 
-    public PatientDetailsIml(String id,  String email,String last_name, String phone, String birth_date, String password) {
+    public PatientDetailsIml(String id,  String email,String last_name, String phone, String birth_date,String first_name,String cin,String assurance_medical,String num_assurance,String adress) {
         this.id = id;
+        this.first_name = first_name;
         this.email = email;
-        this.last_name=last_name;
+        this.last_name = last_name;
+        this.cin = cin;
         this.phone = phone;
+        this.adress = adress;
+        this.assurance_medical = assurance_medical;
+        this.num_assurance = num_assurance;
         this.birth_date = birth_date;
-        this.password = password;
 
 
 
@@ -154,6 +161,7 @@ public class PatientDetailsIml implements UserDetails {
                 patient.getPhone(),
                 patient.getCin(),
                 patient.getPassword(),
+
                 patient.getAdress());
     }
     @Override

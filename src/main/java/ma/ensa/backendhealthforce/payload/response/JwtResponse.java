@@ -4,8 +4,15 @@ public class JwtResponse {
   private String token;
   private String type = "Bearer";
   private String id;
-  private String username;
+  private String first_name;
+  private String last_name;
   private String email;
+  private String cin;
+  private String phone;
+  private String adress;
+  private String assurance_medical;
+  private String num_assurance;
+  private String birth_date;
 
   private String first_name;
   private String last_name;
@@ -23,9 +30,10 @@ public class JwtResponse {
                      String birth_date, String assurance_medical,
                      String num_assurance, String phone,
                      String cin, String adress) {
+
     this.token = accessToken;
     this.id = id;
-    this.username = username;
+    this.first_name = first_name;
     this.email = email;
     this.first_name = first_name;
     this.last_name = last_name;
@@ -44,6 +52,7 @@ public class JwtResponse {
   public void setAdress(String adress) {
     this.adress = adress;
   }
+
 
   public String getToken() {
     return token;
@@ -69,6 +78,7 @@ public class JwtResponse {
     this.first_name = first_name;
   }
 
+
   public String getLast_name() {
     return last_name;
   }
@@ -83,6 +93,7 @@ public class JwtResponse {
 
   public void setBirth_date(String birth_date) {
     this.birth_date = birth_date;
+
   }
 
   public String getAssurance_medical() {
@@ -115,6 +126,7 @@ public class JwtResponse {
 
   public void setCin(String cin) {
     this.cin = cin;
+
   }
 
   public String getAccessToken() {
@@ -149,12 +161,12 @@ public class JwtResponse {
     this.email = email;
   }
 
-  public String getUsername() {
-    return username;
+  public String getFirst_name() {
+    return first_name;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setFirst_name(String first_name) {
+    this.first_name = first_name;
   }
 
 }

@@ -57,6 +57,7 @@ public class AuthController {
     System.out.println("patientAdress " + patientDetails.getAdress());
     return ResponseEntity.ok(new JwtResponse(jwt,
             patientDetails.getId(),
+            patientDetails.getFirst_name(),
             patientDetails.getEmail(),
             patientDetails.getEmail(),
             patientDetails.getFirst_name(),
@@ -68,6 +69,7 @@ public class AuthController {
             patientDetails.getCin(),
             patientDetails.getAdress()
             ));
+
   }
 
   @PostMapping("/signup")
