@@ -14,15 +14,7 @@ public class JwtResponse {
   private String num_assurance;
   private String birth_date;
 
-  private String first_name;
-  private String last_name;
-  private String birth_date;
-  private String assurance_medical;
-  private String num_assurance;
-  private String phone;
 
-  private String cin;
-  private String adress;
 
   public JwtResponse(String accessToken, String id,
                      String username, String email,
@@ -70,13 +62,7 @@ public class JwtResponse {
     this.type = type;
   }
 
-  public String getFirst_name() {
-    return first_name;
-  }
 
-  public void setFirst_name(String first_name) {
-    this.first_name = first_name;
-  }
 
 
   public String getLast_name() {
