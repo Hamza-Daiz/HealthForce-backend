@@ -25,7 +25,6 @@ public class PatientController {
     this.passwordEncoder = passwordEncoder;
   }
 
-
   @PutMapping("/update")
   public void updateInfos(@RequestBody Patient upatient) {
 

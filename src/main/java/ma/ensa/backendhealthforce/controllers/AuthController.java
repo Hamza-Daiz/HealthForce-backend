@@ -34,6 +34,7 @@ public class AuthController {
   @Autowired
   PasswordEncoder encoder;
 
+
   @Autowired
   JwtUtils jwtUtils;
 
@@ -90,6 +91,18 @@ public class AuthController {
     patientRepository.save(patientFromExternal);
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+  }
+  @GetMapping("/getee")
+  // public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+  public String GetEncode() {
+
+
+    String encodedPassword = this.passwordEncoder.encode("toumi");
+    System.out.println("Agent password encoded: " + encodedPassword);
+
+    this.passwordEncoder.matches("toumi","$2a$10$2/AjPwO9WpEepxFUGLXpoOEVXRuFkieToVsV6SD6UVMhr/mP/NHx.");
+
+    return encodedPassword;
   }
 }
 

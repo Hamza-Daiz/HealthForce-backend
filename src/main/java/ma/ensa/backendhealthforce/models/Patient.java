@@ -36,20 +36,8 @@ public class Patient {
     private String assurance_medical;
     @Column(name = "num_assurance")
     private String num_assurance;
-    @Column(name = "home_phone")
-    private String home_phone;
     @Column(name = "description")
     private String description;
-    @Column(name = "poid")
-    private String poid;
-    @Column(name = "taille")
-    private String taille;
-    @Column(name = "temperature")
-    private String temperature;
-    @Column(name = "tension")
-    private String tension;
-    @Column(name = "glecimie")
-    private String glecimie;
 
 
     public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email) {
@@ -75,7 +63,7 @@ public class Patient {
         this.email = email;
     }
 
-    public Patient(String id, String phone,  String adress, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String home_phone, String description, String poid, String taille, String temperature, String tension, String glecimie) {
+    public Patient(String id, String phone,  String adress, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender, String assurance_medical, String num_assurance, String description) {
         this.id = id;
         this.phone = phone;
         this.adress = adress;
@@ -88,13 +76,8 @@ public class Patient {
         this.gender = gender;
         this.assurance_medical = assurance_medical;
         this.num_assurance = num_assurance;
-        this.home_phone = home_phone;
         this.description = description;
-        this.poid = poid;
-        this.taille = taille;
-        this.temperature = temperature;
-        this.tension = tension;
-        this.glecimie = glecimie;
+
     }
 
     public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email, String password, String cin, String gender) {
@@ -151,13 +134,8 @@ public class Patient {
         this.num_assurance = num_assurance;
     }
 
-    public String getHome_phone() {
-        return home_phone;
-    }
 
-    public void setHome_phone(String home_phone) {
-        this.home_phone = home_phone;
-    }
+
 
     public String getDescription() {
         return description;
@@ -165,46 +143,6 @@ public class Patient {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getPoid() {
-        return poid;
-    }
-
-    public void setPoid(String poid) {
-        this.poid = poid;
-    }
-
-    public String getTaille() {
-        return taille;
-    }
-
-    public void setTaille(String taille) {
-        this.taille = taille;
-    }
-
-    public String getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
-    }
-
-    public String getTension() {
-        return tension;
-    }
-
-    public void setTension(String tension) {
-        this.tension = tension;
-    }
-
-    public String getGlecimie() {
-        return glecimie;
-    }
-
-    public void setGlecimie(String glecimie) {
-        this.glecimie = glecimie;
     }
 
     public String getPassword() {
