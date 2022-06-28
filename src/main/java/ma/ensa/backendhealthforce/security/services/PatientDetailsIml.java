@@ -13,15 +13,19 @@ public class PatientDetailsIml implements UserDetails {
     private static final long serialVersionUID = 1L;
     private String id;
     private  String email;
-
-    private String last_name;
     private String first_name;
-    private String cin;
-    private String phone;
-    private String adress;
+    private String last_name;
+    private String birth_date;
     private String assurance_medical;
     private String num_assurance;
-    private String birth_date;
+    private String phone;
+    private String cin;
+
+    private String adress;
+
+    @JsonIgnore
+    private String password;
+
 
     public String getFirst_name() {
         return first_name;
@@ -29,22 +33,6 @@ public class PatientDetailsIml implements UserDetails {
 
     public void setFirst_name(String first_name) {
         this.first_name = first_name;
-    }
-
-    public String getCin() {
-        return cin;
-    }
-
-    public void setCin(String cin) {
-        this.cin = cin;
-    }
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
     }
 
     public String getAssurance_medical() {
@@ -63,6 +51,24 @@ public class PatientDetailsIml implements UserDetails {
         this.num_assurance = num_assurance;
     }
 
+
+    public String getCin() {
+        return cin;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+
     public String getLast_name() {
         return last_name;
     }
@@ -70,11 +76,6 @@ public class PatientDetailsIml implements UserDetails {
     public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
-
-
-
-    @JsonIgnore
-    private String password;
 
     public String getId() {
         return id;
@@ -128,19 +129,39 @@ public class PatientDetailsIml implements UserDetails {
 
     }
 
+    public PatientDetailsIml(String id, String email,
+                             String first_name, String last_name,
+                             String birth_date, String assurance_medical,
+                             String num_assurance, String phone,
+                             String cin, String password, String adress) {
+        this.id = id;
+        this.email = email;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.birth_date = birth_date;
+        this.assurance_medical = assurance_medical;
+        this.num_assurance = num_assurance;
+        this.phone = phone;
+        this.cin = cin;
+        this.password = password;
+        this.adress = adress;
+    }
+
     public static PatientDetailsIml build(Patient patient
     ) {
 
         return new PatientDetailsIml(
                 patient.getId(),
                 patient.getEmail(),
-                patient.getLast_name(),
-                patient.getPhone(),
-                patient.getBirth_date(),
                 patient.getFirst_name(),
-                patient.getCin(),
+                patient.getLast_name(),
+                patient.getBirth_date(),
                 patient.getAssurance_medical(),
                 patient.getNum_assurance(),
+                patient.getPhone(),
+                patient.getCin(),
+                patient.getPassword(),
+
                 patient.getAdress());
     }
     @Override

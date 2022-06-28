@@ -14,19 +14,43 @@ public class JwtResponse {
   private String num_assurance;
   private String birth_date;
 
+  private String first_name;
+  private String last_name;
+  private String birth_date;
+  private String assurance_medical;
+  private String num_assurance;
+  private String phone;
 
-  public JwtResponse(String accessToken, String id, String first_name, String email,String last_name, String cin, String phone, String adress, String assurance_medical, String num_assurance, String birth_date) {
+  private String cin;
+  private String adress;
+
+  public JwtResponse(String accessToken, String id,
+                     String username, String email,
+                     String first_name, String last_name,
+                     String birth_date, String assurance_medical,
+                     String num_assurance, String phone,
+                     String cin, String adress) {
+
     this.token = accessToken;
     this.id = id;
     this.first_name = first_name;
     this.email = email;
+    this.first_name = first_name;
     this.last_name = last_name;
-    this.cin = cin;
-    this.phone = phone;
-    this.adress = adress;
+    this.birth_date = birth_date;
     this.assurance_medical = assurance_medical;
     this.num_assurance = num_assurance;
-    this.birth_date = birth_date;
+    this.phone = phone;
+    this.cin = cin;
+    this.adress = adress;
+  }
+
+  public String getAdress() {
+    return adress;
+  }
+
+  public void setAdress(String adress) {
+    this.adress = adress;
   }
 
 
@@ -46,6 +70,15 @@ public class JwtResponse {
     this.type = type;
   }
 
+  public String getFirst_name() {
+    return first_name;
+  }
+
+  public void setFirst_name(String first_name) {
+    this.first_name = first_name;
+  }
+
+
   public String getLast_name() {
     return last_name;
   }
@@ -54,28 +87,13 @@ public class JwtResponse {
     this.last_name = last_name;
   }
 
-  public String getCin() {
-    return cin;
+  public String getBirth_date() {
+    return birth_date;
   }
 
-  public void setCin(String cin) {
-    this.cin = cin;
-  }
+  public void setBirth_date(String birth_date) {
+    this.birth_date = birth_date;
 
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
-  public String getAdress() {
-    return adress;
-  }
-
-  public void setAdress(String adress) {
-    this.adress = adress;
   }
 
   public String getAssurance_medical() {
@@ -94,12 +112,21 @@ public class JwtResponse {
     this.num_assurance = num_assurance;
   }
 
-  public String getBirth_date() {
-    return birth_date;
+  public String getPhone() {
+    return phone;
   }
 
-  public void setBirth_date(String birth_date) {
-    this.birth_date = birth_date;
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public String getCin() {
+    return cin;
+  }
+
+  public void setCin(String cin) {
+    this.cin = cin;
+
   }
 
   public String getAccessToken() {

@@ -34,6 +34,7 @@ public class AuthController {
   @Autowired
   PasswordEncoder encoder;
 
+
   @Autowired
   JwtUtils jwtUtils;
 
@@ -42,7 +43,7 @@ public class AuthController {
   }
 
   @PostMapping("/signin")
-  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+  public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
     System.out.println("1");
     Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -52,18 +53,23 @@ public class AuthController {
     System.out.println("3");
     PatientDetailsIml patientDetails = (PatientDetailsIml) authentication.getPrincipal();
     System.out.println("4");
+    System.out.println("patientPhone " + patientDetails.getPhone());
+    System.out.println("patientAdress " + patientDetails.getAdress());
     return ResponseEntity.ok(new JwtResponse(jwt,
             patientDetails.getId(),
             patientDetails.getFirst_name(),
             patientDetails.getEmail(),
+            patientDetails.getEmail(),
+            patientDetails.getFirst_name(),
             patientDetails.getLast_name(),
-            patientDetails.getCin(),
-            patientDetails.getPhone(),
-            patientDetails.getAdress(),
+            patientDetails.getBirth_date(),
             patientDetails.getAssurance_medical(),
             patientDetails.getNum_assurance(),
-            patientDetails.getBirth_date()
-    ));
+            patientDetails.getPhone(),
+            patientDetails.getCin(),
+            patientDetails.getAdress()
+            ));
+
   }
 
   @PostMapping("/signup")
@@ -87,6 +93,18 @@ public class AuthController {
     patientRepository.save(patientFromExternal);
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+  }
+  @GetMapping("/getee")
+  // public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+  public String GetEncode() {
+
+
+    String encodedPassword = this.passwordEncoder.encode("toumi");
+    System.out.println("Agent password encoded: " + encodedPassword);
+
+    this.passwordEncoder.matches("toumi","$2a$10$2/AjPwO9WpEepxFUGLXpoOEVXRuFkieToVsV6SD6UVMhr/mP/NHx.");
+
+    return encodedPassword;
   }
 }
 
