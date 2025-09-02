@@ -42,13 +42,14 @@ public class Patient {
     private String work;
 
 
-    public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email) {
+    public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email,String work) {
         this.id = id;
         this.phone = phone;
         this.birth_date = birth_date;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
+        this.work=work;
     }
 
     public Patient(String id, String first_name, String last_name, String email,String password) {
