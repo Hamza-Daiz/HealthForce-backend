@@ -38,6 +38,8 @@ public class Patient {
     private String num_assurance;
     @Column(name = "description")
     private String description;
+    @Column(name = "work")
+    private String work;
 
 
     public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email) {
