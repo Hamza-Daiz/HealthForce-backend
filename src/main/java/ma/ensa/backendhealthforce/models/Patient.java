@@ -40,6 +40,8 @@ public class Patient {
     private String description;
     @Column(name = "work")
     private String work;
+    @Column(name = "reason_of_consultation")
+    private String reason_of_consultation;
 
 
     public Patient(String id, String phone, String birth_date, String first_name, String last_name, String email,String work) {
