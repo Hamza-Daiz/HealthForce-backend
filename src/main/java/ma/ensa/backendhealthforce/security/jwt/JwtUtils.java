@@ -52,7 +52,7 @@ public class JwtUtils {
     } catch (IllegalArgumentException e) {
       logger.error("JWT claims string is empty: {}", e.getMessage());
     }
-
+    //Jwt not valide
     return false;
   }
 }
